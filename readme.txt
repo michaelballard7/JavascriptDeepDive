@@ -16,15 +16,15 @@ Main JS Object Api's (Window,Language, Document):
     3. array
     4. math
     5. window
-    6. location
-    7. navigator
+    6. location (belongs to window)
+    7. navigator (belongs to window)
     8. screen
     9. event
     10.console
     11. object
     12. document
     13. timing
-    14. history
+    14. history (belongs to window)
     15. frame
     15. function
 
