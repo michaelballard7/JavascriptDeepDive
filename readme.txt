@@ -23,7 +23,7 @@ Main JS Object Api's (Window,Language, Document):
     10.console
     11. object
     12. document
-    13. timing
+    13. timing (belongs to window)
     14. history (belongs to window)
     15. frame
     15. function
