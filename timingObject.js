@@ -21,12 +21,12 @@
 
 // create an exit for a set interval with clearTimeout
 
-function hello(){
-    console.log("Hello");
-    window.clearTimeout(time);
-};
-
-var time = setInterval(hello,3000);
+// function hello(){
+//     console.log("Hello");
+//     window.clearTimeout(time);
+// };
+//
+// var time = setInterval(hello,3000);
 // window.setTimeout(hello,3000)
 
 // window.setInterval(hello,2700)
