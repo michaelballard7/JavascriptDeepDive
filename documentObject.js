@@ -182,4 +182,20 @@ let val;
 // query selector all returns a node list which allows certain array methods like forEach
 
 const items = document.querySelectorAll('ul.collection li.collection-item') // returns a nodelist
-console.log(items)
+
+
+items.forEach(function(item, index){
+    item.textContent = `${index}: Hello`
+})
+
+const liOdd = document.querySelectorAll('li:nth-child(odd)');
+const liEven = document.querySelectorAll('li:nth-child(even)');
+
+liOdd.forEach(function(li, index){
+    li.style.background = '#ccc';
+})
+
+// for loop even works on an html collection
+for(let i=0; i<liEven.length; i++){
+    liEven[i].style.background = "lightblue";
+}
