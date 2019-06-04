@@ -181,21 +181,104 @@ let val;
 
 // query selector all returns a node list which allows certain array methods like forEach
 
-const items = document.querySelectorAll('ul.collection li.collection-item') // returns a nodelist
+// const items = document.querySelectorAll('ul.collection li.collection-item') // returns a nodelist
+//
+//
+// items.forEach(function(item, index){
+//     item.textContent = `${index}: Hello`
+// })
+//
+// const liOdd = document.querySelectorAll('li:nth-child(odd)');
+// const liEven = document.querySelectorAll('li:nth-child(even)');
+//
+// liOdd.forEach(function(li, index){
+//     li.style.background = '#ccc';
+// })
+//
+// // for loop even works on an html collection
+// for(let i=0; i<liEven.length; i++){
+//     liEven[i].style.background = "lightblue";
+// }
 
+// traversing the dom is essentially moving up and down the dom via parents and children
 
-items.forEach(function(item, index){
-    item.textContent = `${index}: Hello`
-})
+// const list = document.querySelector('ul.collection');
+// const listItem = document.querySelector('li.collection-item:first-child')
+//
+// val = listItem;
+//
+// // Get child nodes , returns a node list
+// val = list.childNodes // includes text, comments and all other nodes on the html document
+// val = list.childNodes[0];
+// val = list.childNodes[0].nodeName;
+// val = list.childNodes[3].nodeType;
 
-const liOdd = document.querySelectorAll('li:nth-child(odd)');
-const liEven = document.querySelectorAll('li:nth-child(even)');
+/*
+    // 1 - Element
+    // 2 - attribute
+    // 3 - Text Node
+    // 8 - Comment
+    // 9 - Document itself
+    // 10 - Doctype
+*/
 
-liOdd.forEach(function(li, index){
-    li.style.background = '#ccc';
-})
+// get children element nodes only, returns an html collection of just the elements
+// val = list.children
+// list.children[1].textContent = 'Hello';
+//
+// // Children of children
+// val = list.children[3].children;
+//
+// // get the first child element
+// val = list.firstChild;
+// val = list.firstElementChild;
+//
+// // get the last child element
+// val = list.lastChild;
+// val = list.lastElementChild;
+//
+// val = list.childElementCount;
+//
+// // get parent node
+//
+// val = listItem.parentNode;
+// val = listItem.parentElement;
+// val = listItem.parentElement.parentElement;
+//
+// // get the next sibling
+// val = listItem.nextSibling;
+// val = listItem.nextElementSibling.nextElementSibling;
+//
+// // get the previous sibiling
+// val = listItem.previousSibling;
+// val = listItem.previousElementSibling;
 
-// for loop even works on an html collection
-for(let i=0; i<liEven.length; i++){
-    liEven[i].style.background = "lightblue";
-}
+// creating elements on the DOM with JS
+// this allows me to construct DOM elements from scratch
+val = document.createElement('li')
+
+// add a class to the element
+val.className = 'collection-item'
+
+// add an id to the element
+val.id = 'new-item'
+
+// add an attribute
+val.setAttribute('title','new-attribute')
+
+// creare a text node and append
+val.appendChild(document.createTextNode('Hello Michael')) // means I want to put something inside of something
+
+const link = document.createElement("a");
+
+link.className ="delete-item secondary-content";
+
+link.innerHTML = '<i class="fa fa-remove"> </i>';
+
+val.appendChild(link)
+
+// append to a specific place on the DOM
+var collection = document.querySelector('ul.collection')
+collection.appendChild(val)
+
+console.log(val)
