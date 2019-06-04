@@ -32,7 +32,7 @@ console.log(square(4));
     console.log(`Hello ${name} your IIFE Ran..`);
 })("michael");
 
-// PROPERTY MEHTHODS:
+// PROPERTY METHODS:
 // when a function is inside an object its called a method
 const toDo = {
     add: function(){
