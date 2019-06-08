@@ -281,4 +281,61 @@ val.appendChild(link)
 var collection = document.querySelector('ul.collection')
 collection.appendChild(val)
 
+// creating a new element to replace old
+const newHeading = document.createElement('h3')
+
+val = newHeading
+
+val.id = 'task-title'
+
+val.innerText="THis is h3";
+
+val.appendChild(document.createTextNode('Task List New'))
+
+const oldHeader = document.querySelector('#task-title') // retrieves new header
+
+// grab a parent element to replace a child on
+const cardAction = document.querySelector('.card-action')
+
+// replace the child elements
+cardAction.replaceChild(val, oldHeader)
+
+// remove an element from the DoM
+const lis = document.querySelectorAll('li');
+const list = document.querySelector('ul');
+
+// quick and dirty
+lis[0].remove()
+
+// remove child element
+list.removeChild(lis[2])
+
+// retrieving nested classes and attributes
+val = document.querySelector('li:first-child');
+
+val = val.children[0]
+
+val = link.className;
+
+val = link.classList; // returns a DOm token list
+
+val = link.classList[0]
+
+// I can add a class list to an item
+ val = link.classList.add('test')
+
+ val = link
+
+ val = link.classList.remove('test')
+
+ //  edit attributes
+
+ val = link.getAttribute('href')
+ val = link.setAttribute('href', 'https://michaelaballard.com')
+ val = link.setAttribute('title','michaelspage')
+ val = link.hasAttribute('title')
+ val = link.removeAttribute('title')
+ val = link
+
+// val=link
 console.log(val)
